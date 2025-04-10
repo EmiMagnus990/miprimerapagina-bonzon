@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Editar Perfil{% endblock title %}
+
+{% block navbar %}
+<!-- bloque vacío para que no se renderice -->
+{% endblock navbar %}
+
+{% block content %}
+<div class="edit-profile-container">
+    <h2 class="edit-profile-title">Editar perfil</h2>
+
+    <form method="post" enctype="multipart/form-data" class="edit-profile-form">
+        {% csrf_token %}
+
+        <fieldset class="edit-fieldset">
+            <legend class="edit-legend">Datos del perfil</legend>
+            {{ profile_form.as_p }}
+        </fieldset>
+
+        <button type="submit" class="edit-btn-submit">Guardar cambios</button>
+        <a href="{% url 'index' %}" class="edit-btn-cancel">← Volver al inicio</a>
+    </form>
+</div>
+{% endblock content %}

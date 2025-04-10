@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Registro{% endblock title %}
+
+{% block navbar %}
+<!-- bloque vacío para que no se renderice el navbar -->
+{% endblock navbar %}
+
+{% block content %}
+  <div class="auth-container">
+    <h2 class="auth-title">Registro</h2>
+
+    <form method="post" class="auth-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="auth-links">
+        <a href="{% url 'login' %}" class="auth-link">¿Ya tenés cuenta? Iniciá sesión</a>
+      </div>
+      <button type="submit" class="auth-button">Registrarse</button>
+    </form>
+    <a href="{% url 'index' %}" class="auth-home-button">Inicio</a>
+  </div>
+{% endblock %}

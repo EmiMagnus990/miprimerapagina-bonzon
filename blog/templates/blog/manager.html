@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Manager{% endblock title %}
+
+{% block content %}
+<div class="manager-container">
+    <h2>Panel de Control de Posts</h2>
+
+    <a href="{% url 'post_create' %}" class="create-btn">➕ Crear nuevo post</a>
+
+    <table class="manager-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+            <tr>
+                <td data-label="ID">{{ post.id }}</td>
+                <td data-label="Título">{{ post.titulo }}</td>
+                <td data-label="Fecha">{{ post.fecha|date:"d/m/Y H:i" }}</td>
+                <td data-label="Acciones">
+                    <a href="{% url 'post_update' post.id %}" class="action-btn">✏️ Editar</a>
+                    <a href="{% url 'post_delete' post.id %}" class="action-btn">🗑️ Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="4">No hay posts cargados.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

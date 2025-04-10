@@ -3,27 +3,63 @@
 {% block title %}Inicio{% endblock title %}
 
 {% block content %}
-<div class="container">
-    <h1>El avance imparable de la Inteligencia Artificial</h1>
+<div class="container py-5">
+    <h1 class="mb-4">El avance imparable de la Inteligencia Artificial</h1>
     <p>
-        En la última década, la Inteligencia Artificial ha revolucionado múltiples industrias, desde la 
-        medicina hasta la creatividad. Hoy, los modelos más avanzados pueden generar imágenes, escribir textos 
-        complejos y hasta desarrollar código.
-    </p>
-    <p>
-        Con el auge de herramientas como ChatGPT, Gemini y Mistral, las empresas y desarrolladores están adoptando 
-        estas tecnologías para optimizar procesos y mejorar la eficiencia.
-    </p>
-    
-    <h2>¿Hacia dónde va la IA?</h2>
-    <p>
-        La IA no solo se está fortaleciendo en la generación de contenido, sino también en la toma de decisiones, 
-        análisis predictivo y automatización de tareas. A medida que avanza, nos acercamos a sistemas cada vez más 
-        autónomos e inteligentes.
+        La Inteligencia Artificial (IA) se ha convertido en uno de los pilares tecnológicos más importantes del siglo XXI.
+        Desde simples algoritmos de recomendación hasta modelos avanzados que entienden, razonan y crean, la IA está redefiniendo
+        cómo vivimos, trabajamos y nos relacionamos con el mundo digital.
     </p>
 
-    <button class="btn-ingresar">
-        <a href="/blog/">Ingresar</a>
-    </button>
+    <h2 class="mt-5">Aplicaciones que ya están cambiando el mundo</h2>
+    <p>
+        Herramientas como <strong>ChatGPT</strong>, <strong>Gemini</strong>, <strong>Mistral</strong> y <strong>Claude</strong> están siendo adoptadas por millones
+        de personas para tareas que van desde la redacción de correos hasta la generación de ideas de negocio.
+        En el sector salud, la IA ayuda a diagnosticar enfermedades con una precisión sin precedentes. En la industria creativa,
+        artistas utilizan modelos generativos para diseñar desde portadas hasta guiones.
+    </p>
+
+    <h2 class="mt-4">Automatización, predicción y toma de decisiones</h2>
+    <p>
+        Más allá de la generación de contenido, la IA está transformando la forma en que las empresas toman decisiones.
+        A través del análisis predictivo, las compañías pueden anticipar tendencias, optimizar cadenas de suministro y 
+        personalizar experiencias de usuario en tiempo real.
+    </p>
+
+    <h2 class="mt-4">Los desafíos éticos y sociales</h2>
+    <p>
+        Con gran poder, vienen grandes responsabilidades. El desarrollo acelerado de la IA también plantea desafíos importantes: 
+        la privacidad de los datos, la desinformación generada por modelos generativos y el impacto en el empleo son temas centrales 
+        del debate actual.
+        Además, se discute el sesgo algorítmico y la necesidad urgente de establecer marcos legales y éticos para su uso.
+    </p>
+
+    <h2 class="mt-4">¿Qué nos espera en el futuro?</h2>
+    <p>
+        En los próximos años veremos avances en IA que hoy parecen ciencia ficción: agentes autónomos que interactúan entre sí,
+        interfaces cerebro-máquina, IA consciente del contexto y colaboración humano-máquina a niveles más profundos.
+        La convergencia con otras tecnologías como la computación cuántica y la robótica promete un futuro aún más transformador.
+    </p>
+
+    <hr class="my-5">
+
+    <h2 class="mt-5">Sobre este blog</h2>
+    <p>
+        Este blog nació con el objetivo de explorar y documentar el impacto de la inteligencia artificial en nuestras vidas.
+        Acá vas a encontrar artículos, reflexiones y análisis sobre los últimos avances, sus implicancias éticas, tutoriales técnicos 
+        y novedades del ecosistema tecnológico. Si sos desarrollador, curioso, estudiante o simplemente alguien fascinado por el 
+        futuro, este espacio es para vos.
+    </p>
+    <p>
+        ¡Gracias por ser parte de este viaje! Seguí explorando, comentando y compartiendo el contenido para que más personas se unan a la conversación sobre la IA.
+    </p>
+</div>
+
+<div class="cta-final">
+    <div class="cta-content">
+        <h2>¿Querés aprender más sobre Inteligencia Artificial?</h2>
+        <p>Explorá nuestros artículos y descubrí cómo la IA está transformando el mundo.</p>
+        <a href="{% url 'post_list' %}" class="cta-btn">Ver artículos</a>
+    </div>
 </div>
 {% endblock content %}

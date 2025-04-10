@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Eliminar Post{% endblock title %}
+
+{% block navbar %}
+<!-- bloque vacío para que no se renderice -->
+{% endblock navbar %}
+
+{% block content %}
+<div class="create-form-container">
+    <h2>¿Estás seguro de eliminar este post?</h2>
+
+    <p><strong>Título:</strong> {{ post.titulo }}</p>
+    <p><strong>Texto:</strong></p>
+    <p>{{ post.texto }}</p>
+    <p><strong>Fecha:</strong> {{ post.fecha|date:"d/m/Y H:i" }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">🗑️ Sí, eliminar</button>
+        <a href="{% url 'manager' %}" class="btn-volver">Cancelar</a>
+    </form>
+</div>
+{% endblock content %}

@@ -1,5 +1,19 @@
 # mi_app
 
-Bueno... toca hacer el readme! Esta fue mi entrega favorita a lo largo de los cursos que he hecho, si bien no logré dejarlo como me gustaría, me conformo con lo que estoy aprendiendo. Gané mucha confianza con la terminal, los comandos, con el mismo Django(Que ansiosamente quería utilizarlo) y con la base de datos. Estoy dejando y amoldando un poco el terreno ya para el proyecto final, así que habrá mucho que mejorar. El mayor problema, fue la base de datos, no me funcionaba o encontraba los elementos para ponerlos en el post_list, así que tuve que implementar HTML y CSS para de alguna forma esté(Claro que lo voy a solucionar para el proyecto final).
+-Blog Personal sobre Inteligencia Artificial:
+Alumno: Emilio Bonzón
+Curso: Python 75140
+Profesor: Esteban Acevedo
 
-PD: No hay formularios por el pedido que hizo el profe de no realizarlos.
+-Descripción del Proyecto:
+Este proyecto es un blog personal desarrollado con Django. El objetivo del sitio no es solo publicar contenido, sino también servir como bitácora digital y carta de presentación como desarrollador, combinando mi interés por la IA con el desarrollo web.
+
+-Características Destacadas:
+Registro, login, edición de perfil, subir post, editar post y eliminar.
+CRUD completo de publicaciones.
+Sistema de categorías para organizar el contenido.
+Sección de comentarios por post.
+Interfaz adaptativa con navegación basada en plantilla base (base.html).
+Enfoque temático en tecnología, inteligencia artificial y divulgación.
+
+Como reflexión final, fue mi entrega favorita y mi página más completa. Me encantó y quiero seguir desarrollando proyectos.

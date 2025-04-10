@@ -3,52 +3,21 @@
 {% block title %}Publicaciones{% endblock title %}
 
 {% block content %}
-<div class="container mt-4">
-    <h2 class="fw-bold text-primary">IAs Asistentes:</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card p-3">
-                <h4 class="fw-bold">ChatGPT</h4>
-                <p>Basado en GPT-4, es un asistente conversacional capaz de generar texto, responder preguntas y realizar múltiples tareas.</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card p-3">
-                <h4 class="fw-bold">Gemini</h4>
-                <p>Anteriormente Bard, ahora con capacidades multimodales para analizar texto, imágenes y audio simultáneamente.</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card p-3">
-                <h4 class="fw-bold">Mistral</h4>
-                <p>Alternativa de código abierto a OpenAI y Meta, con modelos ligeros como Mistral 7B y Mixtral, ideales para servidores privados.</p>
-            </div>
-        </div>
+<body>
+    <div class="manager-container"> 
+        <h2>Artículos de Inteligencia Artificial</h2>
     </div>
-
-    <h2 class="fw-bold text-primary mt-5">IAs Generadoras de Imágenes y Videos:</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card p-3">
-                <h4 class="fw-bold">DALL·E</h4>
-                <p>Crea imágenes a partir de descripciones de texto, permitiendo ediciones detalladas y modificaciones precisas.</p>
+    <div class="posts-container">
+        {% for post in posts %}
+            <div class="post">
+                <h2>{{ post.titulo }}</h2>
+                <p>{{ post.texto }}</p>
+                <p><strong>Publicado:</strong> {{ post.fecha|date:"d/m/Y H:i" }}</p>
+                <hr>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card p-3">
-                <h4 class="fw-bold">Midjourney</h4>
-                <p>Especializado en arte digital y estilos hiperrealistas, utilizado en diseño gráfico y publicidad creativa.</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card p-3">
-                <h4 class="fw-bold">Sora</h4>
-                <p>Generador de videos con calidad cinematográfica, capaz de producir escenas detalladas con movimiento fluido.</p>
-            </div>
-        </div>
+        {% empty %}
+            <p class="empty">No hay artículos publicados todavía.</p>
+        {% endfor %}
     </div>
-</div>
-<button class="btn-ingresar">
-    <a href="/">Inicio</a>
-</button>
+</body>
 {% endblock content %}

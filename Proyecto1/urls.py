@@ -15,13 +15,33 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-
-#from mi_app import views
+from django.urls import path, include
 from blog import views
+from django.contrib.auth import views as auth_views
+from blog.views import profile_view
+from django.contrib.auth.views import LogoutView
+from django.conf import settings
+from django.conf.urls.static import static
+from blog.views import about_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.index, name="index"),
-    path('blog/', views.post_list, name="post_list")
+    
+    path('', views.index, name='index'),
+    path('blog/', views.post_list, name='post_list'),
+    path('manager/', views.manager_view, name='manager'),
+    path('create/', views.post_create, name='post_create'),
+    path('update/<int:pk>/', views.post_update, name='post_update'),
+    path('delete/<int:pk>/', views.post_delete, name='post_delete'),
+    path('sobre-mi/', about_view, name='about'),
+
+    path('register/', views.register_view, name='register'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='index'), name='logout'),
+    path('profile/edit/', views.profile_edit, name='profile_edit'),
+    path('perfil/', profile_view, name='profile'),
+    path('logout/', LogoutView.as_view(next_page='index'), name='logout'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

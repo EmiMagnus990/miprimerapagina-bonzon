@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Editar Post{% endblock title %}
+
+{% block navbar %}
+<!-- bloque vacío para que no se renderice -->
+{% endblock navbar %}
+
+{% block content %}
+<div class="create-form-container">
+    <h2>Editar Post</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label>Título:</label>
+        <input type="text" name="titulo" value="{{ post.titulo }}" required>
+
+        <label>Texto:</label>
+        <textarea name="texto" rows="5" required>{{ post.texto }}</textarea>
+
+        <button type="submit">Guardar cambios</button>
+    </form>
+
+    <a href="{% url 'manager' %}" class="btn-volver">← Volver al Panel</a>
+</div>
+{% endblock content %}
